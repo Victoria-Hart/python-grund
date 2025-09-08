@@ -82,11 +82,13 @@ def ex_1_4():
     """
     Exercise 1.4 (2p)
     Create dealer1, dealer2, dealer3 = 1, 6, 7.
-    Decide what the dealer should do:
+    Add the variables togheter, use the result to
+    decide what the dealer should do:
       - sum < 17        -> "pick"
       - 17 <= sum < 21  -> "stop"
       - sum == 21       -> "black jack"
       - sum > 21        -> "busted"
+      Return the answers
     """
     # TODO: Write your code here
     dealer1, dealer2, dealer3 = 1, 6, 7
