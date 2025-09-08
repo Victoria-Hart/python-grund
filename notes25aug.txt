@@ -1,0 +1,41 @@
+
+CLI kommandon
+
+pwd			Print Working Directory
+ls			list
+clear			ta bort alla
+cd [mapp]		change directory till [mapp]
+cd ..			hoppa upp
+cd			hoppa upp till root
+mkdir			make directory - skapa mapp
+touch [test.txt]	skapa en fil med namen [test.txt]
+[program] --version	skriver vilken version av [program] är installerad på datorn
+sudo			Super User Do (kör som administratör)
+rm -rf			Remove med flaggorna -r (rekursiv) och -f (force)
+mv			Move att flytta eller byta namn på filer och kataloger
+cat			skriver ut innehållet i en fil
+clear			Rensar terminalen genom att ta bort text från skärmen. (Det påverkar inte några filer eller kataloger, bara den visuella representationen i terminalen)
+
+
+
+Git Kommandon
+
+git clone		klonar repo från github
+git status		låter dig se vilka ändringar som har ghjorts och om de är redo att committas eller behöver läggas till i indexet först
+git add			lägger till alla ändrade filer i indexet (staging area) så att de är redo att committas. Pukten (.) betyder att alla ändrade filer i arbetskatalogen inkluderas.
+git commit -m "kommentar"	Skapar en commit med en meddelandekommentar som beskriver öndringarna du har gjort
+git push		Laddar upp dina commitar från den lokala git-repositorien till den fjärranslutna repositorien (t.ex. GitHub). Detta gör att öandringarna blir tillgängliga för andra användare.
+git pull		Hämtar de senaste ändringarna från fjärranslutna repositoriet och sammanforgar dem med din nuvarande lokala gren (branch)
+git log			visar historiken av tidigare commits i projektet. Du får en lista över alla commits, deras, hash-väarden, författare, datum och commit-meddelanden
+git checkout name-of-branch	Byter till en annan gren (branch) i projektet. Du anger namnet på den gren du vill byta till, och Git byter till den och ladder ned innehållet från den grenen.
+git checkout -b name-of-branch	Skapar en ny gren med det angivna namnet och byter samtidigt till den
+
+
+
+Vim Kommandon
+
+vim (fil)		öppna (fil) med vim
+i			redigera en fil -- insert mode
+"esc"			gå ut ur insert mode
+:wq			spara och stäng fil
+

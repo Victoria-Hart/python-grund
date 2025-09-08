@@ -1,13 +1,17 @@
 
+
 """
 if - Statements (and some loops)
+
 
 In THIS FILE you should write your code.
 Compare with the solutions in `answers.py`.
 
+
 Run with:
     python if_statements_exercises.py
 """
+
 
 def ex_1_1():
     """
@@ -18,7 +22,17 @@ def ex_1_1():
     Return result.
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 1.1 not implemented")
+    card1 = 4
+    card2 = 2
+    card3 = 7
+    card4 = 1
+    card5 = 11
+
+
+    result = sum([card1, card2, card3, card4, card5])
+    return(result)
+
+
 
 
 def ex_1_2():
@@ -31,7 +45,13 @@ def ex_1_2():
     Return status.
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 1.2 not implemented")
+    card1, card2, card3, card4, card5 = 4, 2, 7, 1, 11
+    result = sum([card1, card2, card3, card4, card5])
+    if result > 21:
+        status = "busted"
+    else:
+        status = "safe"
+    return status
 
 
 def ex_1_3():
@@ -43,7 +63,19 @@ def ex_1_3():
       - "black jack" if sum == 21
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 1.3 not implemented")
+    card1, card2, card3 = 4, 2, 7
+    result = sum([card1, card2, card3])
+    if result < 21:
+        status = "safe"
+    elif result > 21:
+        status = "busted"
+    else:
+        status = "black jack"
+
+
+    return status
+
+
 
 
 def ex_1_4():
@@ -57,7 +89,18 @@ def ex_1_4():
       - sum > 21        -> "busted"
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 1.4 not implemented")
+    dealer1, dealer2, dealer3 = 1, 6, 7
+    if sum([dealer1, dealer2, dealer3]) <= 17:
+        if sum([dealer1, dealer2, dealer3]) < 21:
+            action = "stop"
+        elif sum([dealer1, dealer2, dealer3]) != 17:
+            action = "pick"
+    elif sum(dealer1, dealer2, dealer3) == 21:
+        action = "black jack"
+    else:
+        action = "busted"
+   
+    return action
 
 
 def ex_2_1():
@@ -71,7 +114,17 @@ def ex_2_1():
       - plum   -> "The plum is purple."
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 2.1 not implemented")
+    my_fruit = "plum"
+    match my_fruit:
+        case "banana":
+            return "The banana is yellow."
+        case "apple":
+            return "The apple is green."
+        case "kiwi":
+            return "The kiwi is green."
+        case "plum":
+            return "The plum is purple."
+   
 
 
 def ex_2_2():
@@ -82,7 +135,20 @@ def ex_2_2():
       "That is an unknown fruit."
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 2.2 not implemented")
+    my_fruit = "pear"
+    match my_fruit:
+        case "banana":
+            return "The banana is yellow."
+        case "apple":
+            return "The apple is green."
+        case "kiwi":
+            return "The kiwi is green."
+        case "plum":
+            return "The plum is purple."
+        case _:
+            return "That is an unknown fruit."
+
+
 
 
 def ex_3_1():
@@ -92,7 +158,10 @@ def ex_3_1():
     Return the result.
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 3.1 not implemented")
+    number = 481
+    for _ in range(10):
+        number += 6
+    return number
 
 
 def ex_3_2():
@@ -102,7 +171,10 @@ def ex_3_2():
     Return the result.
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 3.2 not implemented")
+    number = 551
+    for _ in range(10):
+        number -= 8
+    return number
 
 
 def ex_3_3():
@@ -112,7 +184,13 @@ def ex_3_3():
     22..45, separated by commas. No extra comma at the end.
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 3.3 not implemented")
+    numbers = []
+    for x in range(22, 46):
+        if x % 2 == 0:
+            numbers.append(str(x))
+    return ",".join(numbers)
+
+
 
 
 def ex_4_1():
@@ -122,7 +200,14 @@ def ex_4_1():
     Return the number of steps.
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 4.1 not implemented")
+    i = 10
+    steps = 0
+    while i < 481:
+        i += 6
+        steps += 1
+    return steps
+
+
 
 
 def ex_4_2():
@@ -131,8 +216,14 @@ def ex_4_2():
     Use a while-loop to subtract 8 from 551 until the value is <= 0.
     Return the number of steps.
     """
-    # TODO: Write your code here
-    raise NotImplementedError("Exercise 4.2 not implemented")
+    value = 551
+    steps = 0
+    while value > 0:
+        value -= 8
+        steps += 1
+    return steps
+
+
 
 
 def ex_4_3():
@@ -142,7 +233,15 @@ def ex_4_3():
     between 28..63 that are divisible by 5 or 7.
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 4.3 not implemented")
+    numbers = []
+    i = 28
+    while i <= 63:
+        if i % 5 == 0 or i % 7 == 0:
+            numbers.append(str(i))
+        i += 1
+    return ",".join(numbers)
+
+
 
 
 def _run_and_print(fn, label):
@@ -151,6 +250,8 @@ def _run_and_print(fn, label):
         print(f"{label}: {result}")
     except NotImplementedError:
         print(f"{label}: (not implemented)")
+
+
 
 
 def main():

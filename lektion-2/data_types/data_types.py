@@ -2,7 +2,7 @@
 
 # Integers - int class, contains positive or negative WHOLE numbers
 # Float - float class, its a real number, specified by decimal point
-# Complex Numbers - complex class, specified as (real part) + (imaginary part). For example 1 + 2j.
+# Complex Numbers - complex class, specified as (real part) + (imaginary part). For example 1 + 2j. j is used instead of i in Python
 # Think about a system with x-axis and y-axis. z = 2 + 3j would be (2,3) in this system. Real part is 2 steps right in the x-axis and imaginary part is 3 steps up in the y-axis.  
 
 a = 5

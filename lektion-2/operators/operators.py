@@ -5,25 +5,25 @@ a = 11
 b = 2
 
 # Addition
-print("Addition:", a + b)  
+print("Addition:", a + b)  # 13
 
 # Subtraction
-print("Subtraction:", a - b) 
+print("Subtraction:", a - b) # 9
 
 # Multiplication
-print("Multiplication:", a * b)  
+print("Multiplication:", a * b)  # 22
 
 # Division
-print("Division:", a / b) 
+print("Division:", a / b) # 5.5
 
 # Floor Division
-print("Floor Division:", a // b)  
+print("Floor Division:", a // b)  # 5 (11 divided by 2, rounded DOWN to 5)
 
 # Modulus
-print("Modulus:", a % b) 
+print("Modulus:", a % b) # 1 (2 goes into 11 5 times with remainder of 1)
 
 # Exponentiation
-print("Exponentiation:", a ** b)
+print("Exponentiation:", a ** b) # 2 to the exponent 11
 
 
 # Comparison
