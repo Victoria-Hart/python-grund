@@ -82,13 +82,11 @@ def ex_1_4():
     """
     Exercise 1.4 (2p)
     Create dealer1, dealer2, dealer3 = 1, 6, 7.
-    Add the variables togheter, use the result to
-    decide what the dealer should do:
+    Decide what the dealer should do:
       - sum < 17        -> "pick"
       - 17 <= sum < 21  -> "stop"
       - sum == 21       -> "black jack"
       - sum > 21        -> "busted"
-      Return the answers
     """
     # TODO: Write your code here
     dealer1, dealer2, dealer3 = 1, 6, 7
@@ -190,7 +188,7 @@ def ex_3_3():
     for x in range(22, 46):
         if x % 2 == 0:
             numbers.append(str(x))
-    return ",".join(numbers)
+    return ", ".join(numbers)
 
 
 
@@ -241,7 +239,7 @@ def ex_4_3():
         if i % 5 == 0 or i % 7 == 0:
             numbers.append(str(i))
         i += 1
-    return ",".join(numbers)
+    return ", ".join(numbers)
 
 
 

@@ -12,6 +12,8 @@ Run with:
 # Section 1: Basic functions
 # ----------------------
 
+import math
+
 def ex_1_1():
     """
     Exercise 1.1 (1p)
@@ -19,8 +21,9 @@ def ex_1_1():
     For example, 10 and 20 should return 10+11+12+...+20.
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 1.1 not implemented")
-
+    def sum_all_num(min_num, max_num):
+        return sum(range(min_num, max_num + 1))
+    return sum_all_num(22, 91)
 
 def ex_1_2():
     """
@@ -32,24 +35,36 @@ def ex_1_2():
     plum   -> red
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 1.2 not implemented")
-
+    # may also use a dictionary to give the value of color for each key (fruit as string)
+    def fruit_color(fruit):
+        fruit = ""
+        if fruit == "banana":
+            return "yellow"
+        elif fruit == "apple" or "kiwi":
+            return "green"
+        elif fruit == plum:
+            return "red"
+    return fruit_color("plum")
 
 def ex_1_3():
     """
     Exercise 1.3 (1p)
     Create a function that returns a comma-separated string of numbers from range_start to range_stop. """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 1.3 not implemented")
+    def string_of_num(range_start, range_stop):
+        return ", ".join(str(i) for i in range(range_start, range_stop + 1))
+    return string_of_num(25, 46)
 
 
-def ex_1_4():
+def ex_1_4(): # !
     """
     Exercise 1.4 (1p)
     Create a function that returns a comma-separated string of numbers from range_start down to range_stop.    """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 1.4 not implemented")
-
+    def down_str_of_num(range_start, range_stop):
+        return ", ".join(str(i) for i in range(range_start, range_stop-1, -1)) # range(start, stop, step)
+    
+    return down_str_of_num(46, 25)
 
 def ex_1_5():
     """
@@ -58,8 +73,14 @@ def ex_1_5():
     handling both ascending and descending ranges.
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 1.5 not implemented")
-
+    def updown_list_str(range_start, range_stop):
+        if range_start < range_stop:
+            return ", ".join(str(i) for i in range(range_start, range_stop + 1))
+        elif range_start > range_stop:
+            return ", ".join(str(i) for i in range(range_start, range_stop-1, -1))
+        else:
+            return "these values are equal"
+    return updown_list_str(25, 46)
 
 def ex_1_6():
     """
@@ -67,8 +88,12 @@ def ex_1_6():
     Create a function that returns a string repeated a specified number of times.
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 1.6 not implemented")
-
+    def repeat_str(my_string, times):
+        iter_print = 0
+        while iter_print < times:
+            print(my_string)
+            iter_print += 1
+    return repeat_str("grey", 12)
 
 def ex_1_7():
     """
@@ -77,9 +102,14 @@ def ex_1_7():
     otherwise False.
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 1.7 not implemented")
-
-
+    def inbetween(a, num1, num2):
+        if a > num1 and a < num2:
+            return True
+        elif a > num2 and a < num1:
+            return True
+        else:
+            return False
+    return inbetween(131, 547, 434)
 
 def ex_1_8():
     """
@@ -88,8 +118,10 @@ def ex_1_8():
     argument, a degree value. The function should convert the value to radians
     and return the result with max 4 decimals    """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 1.9 not implemented")
-
+    def degrees_to_radians(val1):
+        return round(math.radians(val1), 4)
+    
+    return degrees_to_radians(32)
 
 def ex_1_9():
     """
@@ -107,7 +139,23 @@ def ex_1_9():
      message.
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 1.10 not implemented")
+    def fizz_buzz(start, stop):
+        my_list = []
+        if stop <= start:
+            return "Stop must be greater than start."    
+        for i in range(start, stop+1):
+            if i % 15 == 0:
+                my_list.append("Fizz Buzz")
+            elif i % 3 == 0:
+                my_list.append("Fizz")
+            elif i % 5 == 0:
+                my_list.append("Buzz")
+            else:
+                my_list.append(str(i))
+                
+        return ", ".join(my_list)
+
+    return fizz_buzz(1, 30)
 
 
 # ----------------------
@@ -130,8 +178,9 @@ def ex_2_1():
     Test your function with these values.
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 2.1 not implemented")
-
+    def hand_tot(player_hand: list, dealer_hand: list):
+        return f"Player: {sum(player_hand)}, Dealer: {sum(dealer_hand)}"
+    return hand_tot([4, 10, 3], [3, 6, 11])
 
 def ex_2_2():
     """
@@ -147,6 +196,7 @@ def ex_2_2():
       - Player <21: "safe"
       - Player =21: "black jack"
       - Player >21: "busted"
+
       - Dealer <17: "safe"
       - Dealer >=17 and <21: "stop"
       - Dealer =21: "black jack"
@@ -156,8 +206,27 @@ def ex_2_2():
     
     """
     # TODO: Write your code here
-    raise NotImplementedError("Exercise 2.2 not implemented")
+    def game_result(player_hand: list, dealer_hand: list):
+        player_sum = sum(player_hand)
+        dealer_sum = sum(dealer_hand)
 
+        if player_sum < 21:
+            player_status = "safe"
+        elif player_sum == 21:
+            player_status = "black jack"
+        else:
+            player_status = "busted"
+
+        if dealer_sum < 21:
+            dealer_status = "safe"
+        elif dealer_sum == 21:
+            dealer_status = "black jack"
+        else:
+            dealer_status = "busted"
+
+        return f"Player: {player_status}, Dealer: {dealer_status}"
+
+    return game_result([4, 10, 3], [3, 6, 11])
 
 # ----------------------
 # Helper runner for testing
