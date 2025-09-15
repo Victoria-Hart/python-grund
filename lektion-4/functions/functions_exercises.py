@@ -42,7 +42,7 @@ def ex_1_2():
             return "yellow"
         elif fruit == "apple" or "kiwi":
             return "green"
-        elif fruit == plum:
+        elif fruit == "plum":
             return "red"
     return fruit_color("plum")
 
