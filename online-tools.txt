@@ -1,0 +1,9 @@
+GenePy - beginner friendly python exercises
+https://genepy.org/exercises/
+
+Exercism - more beginner friendly 
+https://exercism.org/tracks/python/exercises
+
+Codewars - python exercises
+https://www.codewars.com/
+
