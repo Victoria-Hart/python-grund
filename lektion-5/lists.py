@@ -1,3 +1,5 @@
+import datetime
+
 li1 = [1, 2, 3, 4, 5]
 li2 = list((1, 2, 3, True, 4.9))
 li3 = list('Python')
@@ -97,3 +99,9 @@ students.sort(key=lambda s: sum(s[1])/len(s[1]), reverse=True)
 
 print(students)
 
+
+# use datetime to avoid hardcoding dates which become outdated on websites and have to be manually changed
+today = datetime.date.today()
+dt = today.year
+
+print(f"Copyright {dt}") 
